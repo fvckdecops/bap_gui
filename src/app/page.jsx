@@ -132,10 +132,6 @@ export default function Home() {
                         <Box sx={containerStyle2}>
                             <ProgressBar data={state.bio.skills} />
                         </Box>
-                        <Box sx={{mt: 4}}>
-                            <hr />
-                            <Button variant="contained" endIcon={<SendIcon />} sx={{mt: 2}}>Contact Me</Button>
-                        </Box>
                     </Grid>
                 </Grid>
             </section>
