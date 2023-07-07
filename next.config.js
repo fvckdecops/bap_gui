@@ -2,7 +2,7 @@
 const nextConfig = {
     reactStrictMode: false,
     images: {
-        domains: ["localhost"]
+        domains: ["cdn.adjipratama.web.id"]
     },
     poweredByHeader: false
 };
