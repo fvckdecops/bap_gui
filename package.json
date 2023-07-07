@@ -1,0 +1,36 @@
+{
+  "name": "bap_gui",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/joy": "^5.0.0-alpha.84",
+    "@mui/material": "^5.13.4",
+    "aphrodite": "^2.4.0",
+    "eslint": "8.42.0",
+    "eslint-config-next": "13.4.4",
+    "fbjs": "^3.0.5",
+    "isotope-fit-columns": "^1.1.4",
+    "isotope-layout": "^3.0.6",
+    "next": "13.4.4",
+    "react": "18.2.0",
+    "react-animations": "^1.0.0",
+    "react-dom": "18.2.0",
+    "react-loading-skeleton": "^3.3.1",
+    "react-parallax": "^3.5.1",
+    "react-particles": "^2.10.1",
+    "react-scroll": "^1.8.9",
+    "react-transition-group": "^4.4.5",
+    "swiper": "^9.3.2",
+    "tsparticles": "^2.10.1",
+    "typed.js": "^2.0.16"
+  }
+}

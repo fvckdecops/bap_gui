@@ -1,0 +1,18 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 471" width="1080" height="471">
+	<title>bap</title>
+	<style>
+		tspan { white-space:pre } 
+		.t0 { font-size: 250px;fill: #000000;font-weight: 400;font-family: "AlfaSlabOne-Regular", "Alfa Slab One" } 
+		.s1 { fill: #000000 } 
+		.t2 { font-size: 24px;fill: #ffffff;font-weight: 400;font-family: "AlfaSlabOne-Regular", "Alfa Slab One" } 
+	</style>
+	<text id="Play with your code, not your bo" style="transform: matrix(.135,0,0,.099,402.432,348.311)" >
+		<tspan x="0" y="0" class="t0">P</tspan><tspan  y="0" class="t0">l</tspan><tspan  y="0" class="t0">a</tspan><tspan  y="0" class="t0">y</tspan><tspan  y="0" class="t0"> </tspan><tspan  y="0" class="t0">w</tspan><tspan  y="0" class="t0">i</tspan><tspan  y="0" class="t0">t</tspan><tspan  y="0" class="t0">h</tspan><tspan  y="0" class="t0"> </tspan><tspan  y="0" class="t0">y</tspan><tspan  y="0" class="t0">o</tspan><tspan  y="0" class="t0">u</tspan><tspan  y="0" class="t0">r</tspan><tspan  y="0" class="t0"> </tspan><tspan  y="0" class="t0">c</tspan><tspan  y="0" class="t0">o</tspan><tspan  y="0" class="t0">d</tspan><tspan  y="0" class="t0">e</tspan><tspan  y="0" class="t0">,</tspan><tspan  y="0" class="t0"> </tspan><tspan  y="0" class="t0">n</tspan><tspan  y="0" class="t0">o</tspan><tspan  y="0" class="t0">t</tspan><tspan  y="0" class="t0"> </tspan><tspan  y="0" class="t0">y</tspan><tspan  y="0" class="t0">o</tspan><tspan  y="0" class="t0">u</tspan><tspan  y="0" class="t0">r</tspan><tspan  y="0" class="t0"> </tspan><tspan  y="0" class="t0">b</tspan><tspan  y="0" class="t0">o</tspan><tspan  y="0" class="t0">t</tspan><tspan  y="0" class="t0">
+</tspan>
+	</text>
+	<path id="Lapisan 1" class="s1" d="m206.6 27.6l21.1 21.4-159.4 156.5-21-21.4zm-159.1 159.2l20.5-22 156.8 146.5-20.4 21.9zm326.8 91.4l-21.3 21.1-157.3-158.6 21.3-21.1zm-30.7-11.3l21.3 21.2-151.6 151.9-21.2-21.2z"/>
+	<text id="BAP" style="transform: matrix(11.406,0,0,9.515,402.972,302.744)" >
+		<tspan x="0" y="0" class="t2">B</tspan><tspan  y="0" class="t2">A</tspan><tspan  y="0" class="t2">P</tspan><tspan  y="0" class="t2">
+</tspan>
+	</text>
+</svg>

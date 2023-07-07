@@ -1,0 +1,20 @@
+{
+  "extends": "next/core-web-vitals",
+  "rules": {
+        "indent": ["warn", 4],
+        "semi": ["warn", "always", { "omitLastInOneLineBlock": true }],
+        "no-undef": "off",
+        "no-prototype-builtins": "off"
+    },
+    "ignorePatterns": [
+        "node_modules/*",
+        "security/*",
+        "logs/*",
+        "public/plugins/*",
+        "public/templates/*",
+        "sonar-project.properties",
+        ".vscode/*",
+        "*.yml",
+        "*.md"
+    ]
+}
