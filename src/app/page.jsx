@@ -6,17 +6,6 @@ import SendIcon from '@mui/icons-material/Send';
 import ProgressBar from '@/components/ProgressBar';
 import { ContactMail, Phone } from '@mui/icons-material';
 import GalleryCard from '@/components/GalleryCard';
-import { StyleSheet, css } from 'aphrodite';
-import { 
-    fadeInLeft, 
-    fadeInRight,
-    fadeInDown,
-    bounceInLeft,
-    bounceInRight,
-    bounceInUp,
-    bounceInDown,
-    slideInDown
-} from 'react-animations';
 import { Parallax } from 'react-parallax';
 import { useEffect, useReducer } from 'react';
 import Skeleton from 'react-loading-skeleton';
@@ -61,41 +50,6 @@ const btnMessageStyle = {
     color: '#fff',
     borderColor: '#fff',
 };
-
-const styles = StyleSheet.create({
-    fadeInLeft: {
-        animationName: fadeInLeft,
-        animationDuration: '1s'
-    },
-    fadeInRight: {
-        animationName: fadeInRight,
-        animationDuration: '1s'
-    },
-    fadeInDown: {
-        animationName: fadeInDown,
-        animationDuration: '1s'
-    },
-    bounceInfLeft: {
-        animationName: bounceInLeft,
-        animationDuration: '1s'
-    },
-    bounceInfRight: {
-        animationName: bounceInRight,
-        animationDuration: '1s'
-    },
-    bounceInfUp: {
-        animationName: bounceInUp,
-        animationDuration: '1s'
-    },
-    bounceInfDown: {
-        animationName: bounceInDown,
-        animationDuration: '1s'
-    },
-    slideInDown: {
-        animationName: slideInDown,
-        animationDuration: '1s'
-    }
-});
 
 const initialState = {
     bio: {},
@@ -154,11 +108,11 @@ export default function Home() {
     return (
         <>
             <section name="About">
-                <Box sx={centered} className={css(styles.fadeInDown)}>
+                <Box sx={centered} className="animate__animated animate__fadeInDown">
                     <h2 className='section-header'>About Me</h2>
                 </Box>
                 <Grid container spacing={3}>
-                    <Grid item sx={imageWrapper} xs={12} md={6} sm={12} className={css(styles.fadeInLeft) +' message-mask'}>
+                    <Grid item sx={imageWrapper} xs={12} md={6} sm={12} className="animate__animated animate__fadeInLeft message-mask">
                         {
                             state.bio.photo ?
                                 <>
@@ -172,7 +126,7 @@ export default function Home() {
                                 <Skeleton count={1} width={600} height={600} />
                         }
                     </Grid>
-                    <Grid item xs={12} md={6} sm={12} className={css(styles.fadeInRight)}>
+                    <Grid item xs={12} md={6} sm={12} className="animate__animated animate__fadeInLeft">
                         <p>{state.bio.description ? state.bio.description : <Skeleton count={1} width={600} height={100} />}</p>
                         <h5 style={{margin: '20px 0'}}>My Skills:</h5>
                         <Box sx={containerStyle2}>
@@ -186,7 +140,7 @@ export default function Home() {
                 </Grid>
             </section>
             <section name="Services" className='gray-bg services' style={{width: '100%'}}>
-                <Box sx={centered} className={css(styles.fadeInDown)}>
+                <Box sx={centered} className="animate__animated animate__fadeInDown">
                     <h2 className='section-header'>What I Do</h2>
                 </Box>
                 <Grid container 
@@ -196,10 +150,10 @@ export default function Home() {
                 </Grid>
             </section>
             <section name="Portfolio" className='portfolio' style={{width: '100%'}}>
-                <Box sx={centered} className={css(styles.fadeInDown)}>
+                <Box sx={centered} className="animate__animated animate__fadeInDown">
                     <h2 className='section-header'>My Portfolio</h2>
                 </Box>
-                <div className={css(styles.slideInDown)}>
+                <div className="animate__animated animate__slideInDown">
                     <GalleryCard data={state.portfolios} />
                 </div>
             </section>
@@ -211,7 +165,7 @@ export default function Home() {
                 style={{width: '100%'}}
             >
                 <section name="Contact" className='contact'>
-                    <Box sx={centered} className={css(styles.fadeInDown)}>
+                    <Box sx={centered} className="animate__animated animate__fadeInDown">
                         <h2 className='section-header-white'>Contact Me</h2>
                     </Box>
 

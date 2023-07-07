@@ -8,7 +8,6 @@ import { useCallback, useEffect, useRef } from "react";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 import { fadeInDown, fadeInUp } from 'react-animations';
-import { StyleSheet, css } from 'aphrodite';
 
 const swiperStyle = {
     backgroundImage: 'url("/images/header.jpg")',
@@ -45,17 +44,6 @@ const typedConfig = {
     backDelay: 2000
 };
 
-const styles = StyleSheet.create({
-    fadeInDown: {
-        animationName: fadeInDown,
-        animationDuration: '1s'
-    },
-    fadeInUp: {
-        animationName: fadeInUp,
-        animationDuration: '1s'
-    }
-});
-
 export default function CarouselElement() {
     const el = useRef();
 
@@ -74,7 +62,7 @@ export default function CarouselElement() {
 
     return (
         <>
-            <div className={css(styles.fadeInDown)}>
+            <div className="animate__animated animate__fadeInDown">
                 <Swiper
                     spaceBetween={0}
                     className='mySwiper'
@@ -189,7 +177,7 @@ export default function CarouselElement() {
                     </SwiperSlide>
                 </Swiper>
             </div>
-            <div className={'header-separator '+ css(styles.fadeInUp)}></div>
+            <div className="header-separator animate__animated animate__fadeInUp"></div>
         </>
     );
 }
