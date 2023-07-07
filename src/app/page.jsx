@@ -5,7 +5,7 @@ import { Box, Button, Grid, TextField } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import ProgressBar from '@/components/ProgressBar';
 import { ContactMail, Phone } from '@mui/icons-material';
-import GalleryIsotope from '@/components/GalleryIsotope';
+import GalleryCard from '@/components/GalleryCard';
 import { StyleSheet, css } from 'aphrodite';
 import { 
     fadeInLeft, 
@@ -61,45 +61,6 @@ const btnMessageStyle = {
     color: '#fff',
     borderColor: '#fff',
 };
-
-const photos = [
-    {
-        "type": "wordpress",
-        "source": "hardrockfm.png",
-        "name": "Hard Rock FM",
-        "url": "https://hardrockfm.com"
-    },
-    {
-        "type": "wordpress",
-        "source": "adelaar.png",
-        "name": "Adelaar Cruises",
-        "url": "https://adelaar-cruises.com/"
-    },
-    {
-        "type": "wordpress",
-        "source": "kmana.png",
-        "name": "Kmana Concept",
-        "url": "https://www.kmanaconcept.com/"
-    },
-    {
-        "type": "wordpress",
-        "source": "madeita.png",
-        "name": "Dr Made Ita - Aesthetics Consultant",
-        "url": "https://www.drmadeitabali.com/"
-    },
-    {
-        "type": "react",
-        "source": "bogor.png",
-        "name": "Sukamaju Cibungbulang",
-        "url": "https://sukamaju-cibungbulang.id/"
-    },
-    {
-        "type": "laravel",
-        "source": "warisan.png",
-        "name": "Warisan - Indonesian Manufacturer Furniture",
-        "url": "https://warisan.com/"
-    },
-];
 
 const styles = StyleSheet.create({
     fadeInLeft: {
@@ -239,7 +200,7 @@ export default function Home() {
                     <h2 className='section-header'>My Portfolio</h2>
                 </Box>
                 <div className={css(styles.slideInDown)}>
-                    <GalleryIsotope data={state.portfolios} />
+                    <GalleryCard data={state.portfolios} />
                 </div>
             </section>
             <Parallax

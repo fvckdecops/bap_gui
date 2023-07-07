@@ -1,13 +1,27 @@
 import { Grid } from "@mui/material";
-import Isotope from "isotope-layout";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { StyleSheet, css } from 'aphrodite';
+import { 
+    bounceIn, 
+    bounceOutDown
+} from 'react-animations';
 import Skeleton from "react-loading-skeleton";
 import 'react-loading-skeleton/dist/skeleton.css';
 
+const styles = StyleSheet.create({
+    bounceIn: {
+        animationName: bounceIn,
+        animationDuration: '1s'
+    },
+    bounceOutDown: {
+        animationName: bounceOutDown,
+        animationDuration: '1s'
+    }
+});
+
 export default function GalleryIsotope({ data }) {
-    const isotope = useRef();
     const [filter, setFilter] = useState("*");
 
     let menus = [{"type": "*", "isChecked": true}];
@@ -17,28 +31,6 @@ export default function GalleryIsotope({ data }) {
             return menus.find(a => a.type === type);
         });
 
-    useEffect(() => {
-        if(data.length) {
-            isotope.current = new Isotope('.gallery', {
-                itemSelector: '.item-img',
-                layoutMode: 'fitRows',
-                fitRows: {
-                    gutter: 10
-                }
-            });
-    
-            return () => isotope.current.destroy();
-        }
-    }, [data]);
-
-    useEffect(() => {
-        if(data.length) {
-            filter === '*'
-                ? isotope.current.arrange({filter: `*`})
-                : isotope.current.arrange({filter: `.${filter}`});
-        }
-    }, [data, filter]);
-
     const handleFilterKeyChange = (e, key) => {
         let btn = document.querySelectorAll(".filtering button");
         btn.forEach(el => el.classList.remove('active'));
@@ -47,6 +39,19 @@ export default function GalleryIsotope({ data }) {
 
         setFilter(key);
     };
+
+    useEffect(() => {
+        if(filter === "*") {
+            document.querySelectorAll('.item-img').forEach(el => el.classList.add('active-item'));
+        } else {
+            document.querySelectorAll('.item-img').forEach((el, ind) => {
+                if(!el.classList.contains(filter)) {
+                    el.classList.add(css(styles.bounceOutDown));
+                    setTimeout(() => el.classList.remove('active-item', css(styles.bounceOutDown)), 900);
+                }
+            });
+        }
+    }, [filter]);
 
     return (
         <>
@@ -66,9 +71,9 @@ export default function GalleryIsotope({ data }) {
                                     let url = 'http://'+ process.env.NEXT_PUBLIC_CDN_HOST +"/public/images/portfolio/"+ val.source;
                                     
                                     return (
-                                        <Grid item xs={12} md={3} sm={12} className={"item-img "+ val.type} key={ind}>
+                                        <Grid item xs={12} md={3} sm={12} className={"item-img active-item "+ val.type + ' '+ ((filter === val.type || filter === "*") ? css(styles.bounceIn) : '')} key={ind}>
                                             <Link href={val.url} target="_blank"></Link>
-                                            <div className="part-img">
+                                            <div className="part-img" style={{textAlign: 'center'}}>
                                                 <Image src={ url } alt={val.name} className="img-fluid" width={255} height={255} style={{width: '255px', 'height': '255px'}} />
                                                 <div className="overlay-img">
                                                     <h4 className="capitalize">{val.type}</h4>

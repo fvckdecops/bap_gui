@@ -348,7 +348,13 @@ section {
 .portfolio .gallery .item-img {
   position: relative;
   overflow: hidden;
+  display: none;
 }
+
+.portfolio .gallery .item-img.active-item {
+  display: block;
+}
+
 .portfolio .gallery .item-img a {
   position: absolute;
   width: 100%;
