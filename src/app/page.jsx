@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { Box, Button, Grid, TextField } from '@mui/material';
-import SendIcon from '@mui/icons-material/Send';
+import { Notify } from 'notiflix';
 import ProgressBar from '@/components/ProgressBar';
 import { ContactMail, Phone } from '@mui/icons-material';
 import GalleryCard from '@/components/GalleryCard';
@@ -105,6 +105,29 @@ export default function Home() {
         getPortfolioList().then((data) => dispatch({type: "getPortfolioList", payload: data}));
     }, []);
 
+    const sendMail = async (e) => {
+        e.preventDefault();
+
+        const forms = document.querySelectorAll('input');
+        const description = document.querySelector('textarea');
+        let params = {};
+
+        forms.forEach((val, ind) => params[val.id] = val.value);
+        params = {...params, description: description.value};
+
+        let response = await fetch('/api/mail', {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(params)
+        });
+        response = await response.json();
+        
+        const {code, message} = response;
+        return (code === 0) ? Notify.success(message) : Notify.failure(message);
+    };
+
     return (
         <>
             <section name="About">
@@ -181,9 +204,9 @@ export default function Home() {
                     </Box>
                     <Box sx={centered}>
                         <Box className='part-info'>
-                            <form id="formContact" style={{width: '100%'}}>
+                            <form id="formContact" style={{width: '100%'}} onSubmit={sendMail}>
                                 <Box sx={{...containerStyle, gap: 3}}>
-                                    <TextField id="username" label="Name" variant="filled" className='outline-input' />
+                                    <TextField id="name" label="Name" variant="filled" className='outline-input' />
                                     <TextField id="email" label="Email" variant="filled" className='outline-input' />
                                 </Box>
                                 <TextField fullWidth sx={{my: 2}} id="subject" label="Subject" variant="filled" className='outline-input' />
@@ -197,7 +220,7 @@ export default function Home() {
                                     variant="filled"
                                     rows={4}
                                 />
-                                <Button variant="outlined" sx={btnMessageStyle}>Send Message</Button>
+                                <Button type="submit" variant="outlined" sx={btnMessageStyle}>Send Message</Button>
                             </form>
                         </Box>
                     </Box>
