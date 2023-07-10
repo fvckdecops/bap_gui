@@ -12,7 +12,7 @@ export async function POST(req) {
             "Content-Type": "application/json"
         }),
         body: JSON.stringify(body),
-        mode: "cors",
+        mode: "same-origin",
         cache: 'default'
     });
 

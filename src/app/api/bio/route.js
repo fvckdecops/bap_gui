@@ -5,7 +5,7 @@ export async function GET(req) {
 
     let response = await fetch('http://'+ process.env.API_HOST +'/api/Bio/'+ path, {
         method: "GET",
-        mode: "cors",
+        mode: "same-origin",
         headers: new Headers({
             "Authorization": 'Basic '+ btoa(process.env.API_USERNAME +':'+ process.env.API_PASSWORD)
         }),
