@@ -12,7 +12,6 @@ export async function POST(req) {
             "Content-Type": "application/json"
         }),
         body: JSON.stringify(body),
-        mode: "same-origin",
         cache: 'default'
     });
 
