@@ -11,6 +11,7 @@ import { useEffect, useReducer } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import ServiceCard from '@/components/ServiceCard';
+import { Analytics } from '@vercel/analytics/react';
 
 const containerStyle = {
     display: 'grid',
@@ -130,6 +131,7 @@ export default function Home() {
 
     return (
         <>
+            <Analytics />
             <section name="About">
                 <Box sx={centered} className="animate__animated animate__fadeInDown">
                     <h2 className='section-header'>About Me</h2>
